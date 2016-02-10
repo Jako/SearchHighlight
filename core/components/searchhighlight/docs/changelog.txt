@@ -1,5 +1,5 @@
-Changelog
-=========
+Changelog for SearchHighlight
+=============================
 
 - 2.0.0
     - Initial release for MODX Revolution
