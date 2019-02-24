@@ -3,9 +3,19 @@
   "lowCaseName": "searchhighlight",
   "description": "Highlight search terms on page linked from search results",
   "author": "Thomas Jakobi",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "package": {
     "elements": {
+      "chunks": [
+        {
+          "name": "tplTermHighlight",
+          "file": "termhighlight.chunk.html"
+        },
+        {
+          "name": "tplSearchTerms",
+          "file": "searchterms.chunk.html"
+        }
+      ],
       "plugins": [
         {
           "name": "SearchHighlight",
@@ -19,16 +29,97 @@
     },
     "systemSettings": [
       {
-        "key": "highlightclasses",
+        "key": "debug",
+        "type": "combo-boolean",
+        "area": "system",
+        "value": "highlight"
+      },
+      {
+        "key": "searchedRequestKey",
+        "type": "textfield",
+        "area": "site",
+        "value": "searched"
+      },
+      {
+        "key": "searchtypeRequestKey",
+        "type": "textfield",
+        "area": "site",
+        "value": "searchtype"
+      },
+      {
+        "key": "disabledTags",
+        "type": "textfield",
+        "area": "site",
+        "value": "head,form,select"
+      },
+      {
+        "key": "highlightClasses",
         "type": "textfield",
         "area": "site",
         "value": "highlight"
+      },
+      {
+        "key": "sections",
+        "type": "combo-boolean",
+        "area": "site",
+        "value": "1"
+      },
+      {
+        "key": "sectionsStart",
+        "type": "textfield",
+        "area": "site",
+        "value": "<!-- SearchHighlightStart -->"
+      },
+      {
+        "key": "sectionsEnd",
+        "type": "textfield",
+        "area": "site",
+        "value": "<!-- SearchHighlightEnd -->"
+      },
+      {
+        "key": "highlightTpl",
+        "type": "textfield",
+        "area": "site",
+        "value": "tplTermHighlight"
+      },
+      {
+        "key": "searchTerms",
+        "type": "textfield",
+        "area": "site",
+        "value": "<!--search_terms-->"
+      },
+      {
+        "key": "searchTermsTpl",
+        "type": "textfield",
+        "area": "site",
+        "value": "tplSearchTerms"
       }
     ]
   },
+  "dependencies": [
+    {
+      "name": "php",
+      "version": ">=5.4"
+    },
+    {
+      "name": "modx",
+      "version": ">=2.6"
+    }
+  ],
   "build": {
-    "readme": "docs/readme.txt",
-    "license": "docs/license.txt",
-    "changelog": "docs/changelog.txt"
+    "readme": "docs/readme.md",
+    "license": "docs/license.md",
+    "changelog": "docs/changelog.md",
+    "options": {
+      "modx_version": "2.6"
+    },
+    "setupOptions": {
+      "source": "setup.options.php"
+    },
+    "resolver": {
+      "after": [
+        "resolve.treehillstudio.php"
+      ]
+    }
   }
 }
