@@ -132,7 +132,7 @@ class SearchHighlight
         if ($exactphrase) {
             $searchArray = array($search);
         } else {
-            $searchArray = array_unique(explode(' ', $search));
+            $searchArray = ($search) ? array_unique(explode(' ', $search)) : array();
         }
 
         $terms = array();
