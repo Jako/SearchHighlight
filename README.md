@@ -9,7 +9,7 @@ displayed page. If the request parameter `searchtype` is filled with `exactphras
 is highlighted.
 
 The highlight result could be templated with a chunk, that could be referenced in the MODX system settings. A lot of
-SearchHighlight options with the systemsettings in the `searchhighlight` namespace.
+SearchHighlight options could be changed with the system settings in the `searchhighlight` namespace.
 
 ## Installation
 
