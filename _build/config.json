@@ -3,7 +3,7 @@
   "lowCaseName": "searchhighlight",
   "description": "Highlight search terms on page linked from search results",
   "author": "Thomas Jakobi",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "package": {
     "elements": {
       "chunks": [
@@ -32,7 +32,7 @@
         "key": "debug",
         "type": "combo-boolean",
         "area": "system",
-        "value": "highlight"
+        "value": "0"
       },
       {
         "key": "searchedRequestKey",
@@ -62,7 +62,7 @@
         "key": "sections",
         "type": "combo-boolean",
         "area": "site",
-        "value": "1"
+        "value": "0"
       },
       {
         "key": "sectionsStart",

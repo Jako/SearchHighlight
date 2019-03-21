@@ -29,7 +29,7 @@ class SearchHighlight
      * The version
      * @var string $version
      */
-    public $version = '2.1.0';
+    public $version = '2.1.1';
 
     /**
      * The class options
@@ -132,7 +132,7 @@ class SearchHighlight
         if ($exactphrase) {
             $searchArray = array($search);
         } else {
-            $searchArray = array_unique(explode(' ', $search));
+            $searchArray = ($search) ? array_unique(explode(' ', $search)) : array();
         }
 
         $terms = array();
@@ -174,8 +174,8 @@ class SearchHighlight
         }
 
         // Mask all terms first
-        $maskStart = '<_^_>';
-        $maskEnd = '<_$_>';
+        $maskStart = '<_»_>';
+        $maskEnd = '<_«_>';
         $disabledTags = array_map('trim', explode(',', $this->getOption('disabledTags')));
         $splitExTags = array();
         foreach ($disabledTags as $disabledTag) {
@@ -185,13 +185,13 @@ class SearchHighlight
         $splitExDisabled = '~([a-z0-9-]+\s*=\s*".*?"|' . implode('|', $splitExTags) . ')~isu';
         foreach ($terms as $termText => $termValue) {
             foreach ($sections as &$section) {
-                if (($enableSections && strpos($section, $this->getOption('sectionsStart')) === 0 && strpos($section, $termText) !== false) ||
-                    (!$enableSections && strpos($section, $termText) !== false)
+                if (($enableSections && strpos($section, $this->getOption('sectionsStart')) === 0 && stripos($section, $termText) !== false) ||
+                    (!$enableSections && stripos($section, $termText) !== false)
                 ) {
                     $subSections = preg_split($splitExDisabled, $section, null, PREG_SPLIT_DELIM_CAPTURE);
                     foreach ($subSections as &$subSection) {
                         if (!preg_match($splitExDisabled, $subSection)) {
-                            $subSection = str_replace($termText, $maskStart . $termText . $maskEnd, $subSection);
+                            $subSection = preg_replace('~(' . preg_quote($termText, '~') . ')~iu', $maskStart . '$1' . $maskEnd, $subSection);
                         }
                     }
                     $section = implode('', $subSections);
@@ -202,7 +202,11 @@ class SearchHighlight
 
         // Replace the terms after to avoid nested replacement
         foreach ($terms as $termText => $termValue) {
-            $text = str_replace($maskStart . $termText . $maskEnd, $termValue, $text);
+            $text = preg_replace(
+                '~' . $maskStart . '(' . preg_quote($termText, '~') . ')' . $maskEnd . '~iu',
+                str_replace(array('$', $termText), array('\$', '$1'), $termValue),
+                $text
+            );
         }
 
         // Remove remaining section markers
@@ -239,7 +243,7 @@ class SearchHighlight
             $highlightText = $this->modx->getChunk($chunkName, array(
                 'terms' => implode(', ', $searchArray),
                 'url' => $url . (($parameters) ? '?' . http_build_query($parameters) : '')
-        ));
+            ));
             $text = str_replace('<!--search_terms-->', $highlightText, $text);
         }
 
