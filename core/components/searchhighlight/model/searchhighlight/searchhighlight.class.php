@@ -2,7 +2,7 @@
 /**
  * SearchHighlight Classfile
  *
- * Copyright 2015-2019 by Thomas Jakobi <thomas.jakobi@partout.info>
+ * Copyright 2015-2020 by Thomas Jakobi <thomas.jakobi@partout.info>
  *
  * @package searchhighlight
  * @subpackage classfile
@@ -29,7 +29,7 @@ class SearchHighlight
      * The version
      * @var string $version
      */
-    public $version = '2.1.1';
+    public $version = '2.1.2';
 
     /**
      * The class options
@@ -181,8 +181,8 @@ class SearchHighlight
         foreach ($disabledTags as $disabledTag) {
             $splitExTags[] = '<' . $disabledTag . '.*?</' . $disabledTag . '>';
         }
-        // No replacements in html tag attributes and disabled tags
-        $splitExDisabled = '~([a-z0-9-]+\s*=\s*".*?"|' . implode('|', $splitExTags) . ')~isu';
+        // No replacements in html tags and between disabled tags
+        $splitExDisabled = '~(' . implode('|', $splitExTags) . '|</?[a-z0-9]+[^>]*?>)~isu';
         foreach ($terms as $termText => $termValue) {
             foreach ($sections as &$section) {
                 if (($enableSections && strpos($section, $this->getOption('sectionsStart')) === 0 && stripos($section, $termText) !== false) ||

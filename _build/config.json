@@ -3,7 +3,7 @@
   "lowCaseName": "searchhighlight",
   "description": "Highlight search terms on page linked from search results",
   "author": "Thomas Jakobi",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "package": {
     "elements": {
       "chunks": [

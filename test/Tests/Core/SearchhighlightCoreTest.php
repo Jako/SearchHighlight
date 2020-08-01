@@ -12,7 +12,8 @@ class SearchhighlightCoreTest extends SearchhighlightTestCase
     {
         $source = file_get_contents($this->modx->config['testPath'] . 'Data/Page/source.page.tpl');
         $links = array(
-            'Template' => '<span class="highlight">Template</span>'
+            'Template' => '<span class="highlight">Template</span>',
+            'section' => '<span class="highlight">section</span>'
         );
         $this->searchhighlight->options['sections'] = false;
         $source = $this->searchhighlight->highlightTerms($source, $links);
@@ -25,7 +26,8 @@ class SearchhighlightCoreTest extends SearchhighlightTestCase
     {
         $source = file_get_contents($this->modx->config['testPath'] . 'Data/Page/source.page.tpl');
         $links = array(
-            'Template' => '<span class="highlight">Template</span>'
+            'Template' => '<span class="highlight">Template</span>',
+            'section' => '<span class="highlight">section</span>'
         );
         $this->searchhighlight->options['sections'] = true;
         $source = $this->searchhighlight->highlightTerms($source, $links);
