@@ -5,6 +5,7 @@
  * @package searchhighlight
  * @subpackage test
  */
+
 require_once strtr(realpath(dirname(__FILE__)) . '/SearchhighlightTestCase.php', '\\', '/');
 
 class SearchhighlightTestHarness
@@ -67,8 +68,12 @@ class SearchhighlightTestHarness
 
         $debug = !empty($options['debug']);
         $modx->setDebug($debug);
-        if (!empty($properties['logTarget'])) $modx->setLogTarget($properties['logTarget']);
-        if (!empty($properties['logLevel'])) $modx->setLogLevel($properties['logLevel']);
+        if (!empty($properties['logTarget'])) {
+            $modx->setLogTarget($properties['logTarget']);
+        }
+        if (!empty($properties['logLevel'])) {
+            $modx->setLogLevel($properties['logLevel']);
+        }
         $modx->user = $modx->newObject('modUser');
         $modx->user->set('id', $modx->getOption('modx.test.user.id', null, 1));
         $modx->user->set('username', $modx->getOption('modx.test.user.username', null, 'test'));

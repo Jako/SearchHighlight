@@ -1,6 +1,6 @@
 <?php
 /**
- * Properties file for testing
+ * Sample properties file for testing.
  *
  * @package searchhighlight
  * @subpackage test

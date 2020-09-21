@@ -18,7 +18,7 @@ class SearchhighlightTestCase extends \PHPUnit\Framework\TestCase
     protected $searchhighlight = null;
 
     /**
-     * Ensure all tests have a reference to the MODx and SearchHighlight objects
+     * Ensure all tests have a reference to the MODX and SearchHighlight objects
      */
     public function setUp()
     {
@@ -30,6 +30,7 @@ class SearchhighlightTestCase extends \PHPUnit\Framework\TestCase
         $this->searchhighlight = new SearchHighlight($this->modx);
         $this->searchhighlight->options['debug'] = true;
 
+        /* make sure to reset MODX placeholders so as not to keep placeholder data across tests */
         $this->modx->placeholders = array();
         $this->modx->searchhighlight = &$this->searchhighlight;
 
