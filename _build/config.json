@@ -110,9 +110,6 @@
     "readme": "docs/readme.md",
     "license": "docs/license.md",
     "changelog": "docs/changelog.md",
-    "options": {
-      "modx_version": "2.6"
-    },
     "setupOptions": {
       "source": "setup.options.php"
     },
