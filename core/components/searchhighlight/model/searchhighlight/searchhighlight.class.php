@@ -2,7 +2,7 @@
 /**
  * SearchHighlight Classfile
  *
- * Copyright 2015-2020 by Thomas Jakobi <thomas.jakobi@partout.info>
+ * Copyright 2015-2021 by Thomas Jakobi <thomas.jakobi@partout.info>
  *
  * @package searchhighlight
  * @subpackage classfile
