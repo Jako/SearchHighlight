@@ -5,7 +5,7 @@ The highlight result could be templated with a chunk, that could be referenced i
 
 ## System Settings
 
-The following MODX system settings are available:
+SearchHighlight uses the following system settings in the namespace `searchhighlight`.
 
 Key | Description | Default
 ----|-------------|--------
