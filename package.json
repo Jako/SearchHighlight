@@ -1,7 +1,7 @@
 {
   "name": "searchhighlight",
   "description": "Highlight search terms on page linked from search results",
-  "author": "Thomas Jakobi <thomas.jakobi@partout.info>",
+  "author": "Thomas Jakobi <office@treehillstudio.com>",
   "private": true,
   "devDependencies": {
     "grunt": "^1.4.1",

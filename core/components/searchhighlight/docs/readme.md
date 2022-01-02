@@ -1,7 +1,7 @@
 SearchHighlight
 ===============
 
-- Authors: Thomas Jakobi <thomas.jakobi@partout.info>
+- Authors: Thomas Jakobi <office@treehillstudio.com>
 - License: GNU GPLv2
 
 ## Features
