@@ -19,8 +19,8 @@
       "plugins": [
         {
           "name": "SearchHighlight",
-          "file": "searchhighlight.plugin.php",
           "description": "Highlight search terms on page linked from search results",
+          "file": "searchhighlight.plugin.php",
           "events": [
             "OnWebPagePrerender"
           ]
