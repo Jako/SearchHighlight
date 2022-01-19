@@ -9,7 +9,7 @@ SearchHighlight uses the following system settings in the namespace `searchhighl
 
 Key | Description | Default
 ----|-------------|--------
-Debug | Log debug informations in MODX error log. | No
+Debug | Log debug information in MODX error log. | No
 Disabled Tags |(Comma separated list) SearchHighlight does not replace text inside of this HTML tags. | `head,form,select`
 Search Highlight CSS Classnames | CSS classnames that are assigned to the found text on the current page. If multiple classnames are set, the first classname is added to every here  | `highlight`
 Highlight Template | Template Chunk for the search highlight replacement. | `tplTermHighlight`
