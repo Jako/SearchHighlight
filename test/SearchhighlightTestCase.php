@@ -31,7 +31,7 @@ class SearchhighlightTestCase extends \PHPUnit\Framework\TestCase
         $this->searchhighlight->options['debug'] = true;
 
         /* make sure to reset MODX placeholders so as not to keep placeholder data across tests */
-        $this->modx->placeholders = array();
+        $this->modx->placeholders = [];
         $this->modx->searchhighlight = &$this->searchhighlight;
 
         error_reporting(E_ALL);
