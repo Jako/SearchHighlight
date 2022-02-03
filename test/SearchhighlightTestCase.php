@@ -20,7 +20,7 @@ class SearchhighlightTestCase extends \PHPUnit\Framework\TestCase
     /**
      * Ensure all tests have a reference to the MODX and SearchHighlight objects
      */
-    public function setUp()
+    public function setUp(): void
     {
         $this->modx = SearchhighlightTestHarness::_getConnection();
 
@@ -40,7 +40,7 @@ class SearchhighlightTestCase extends \PHPUnit\Framework\TestCase
     /**
      * Remove reference at end of test case
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         $this->modx = null;
         $this->searchhighlight = null;
