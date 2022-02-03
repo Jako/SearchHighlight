@@ -4,9 +4,13 @@
  * @subpackage plugin
  */
 
-class SearchhighlightOnWebPagePrerender extends SearchhighlightPlugin
+namespace TreehillStudio\SearchHighlight\Plugins\Events;
+
+use TreehillStudio\SearchHighlight\Plugins\Plugin;
+
+class OnWebPagePrerender extends Plugin
 {
-    public function run()
+    public function process()
     {
         $highlightTpl = $this->searchhighlight->getOption('highlightTpl');
         $searchTermsTpl = $this->searchhighlight->getOption('searchTermsTpl');

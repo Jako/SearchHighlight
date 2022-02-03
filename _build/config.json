@@ -3,7 +3,7 @@
   "lowCaseName": "searchhighlight",
   "description": "Highlight search terms on page linked from search results",
   "author": "Thomas Jakobi",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "package": {
     "elements": {
       "chunks": [
@@ -99,7 +99,7 @@
   "dependencies": [
     {
       "name": "php",
-      "version": ">=5.4"
+      "version": ">=7.2"
     },
     {
       "name": "modx",
@@ -115,6 +115,7 @@
     },
     "resolver": {
       "after": [
+        "resolve.cleanup.php",
         "resolve.treehillstudio.php"
       ]
     }

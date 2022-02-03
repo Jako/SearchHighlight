@@ -17,7 +17,7 @@ class SearchhighlightTestHarness
     /**
      * @var array Static reference to configuration array.
      */
-    public static $properties = array();
+    public static $properties = [];
 
     /**
      * Load all Test Suites for xPDO Test Harness.
@@ -26,8 +26,7 @@ class SearchhighlightTestHarness
      */
     public static function suite()
     {
-        $suite = new SearchhighlightTestHarness();
-        return $suite;
+        return new SearchhighlightTestHarness();
     }
 
     /**
@@ -37,7 +36,7 @@ class SearchhighlightTestHarness
      * @param array $options An array of configuration parameters.
      * @return xPDO An xPDO object instance.
      */
-    public static function _getConnection($options = array())
+    public static function _getConnection($options = [])
     {
         $modx = SearchhighlightTestHarness::$modx;
         if (is_object($modx)) {
@@ -54,7 +53,7 @@ class SearchhighlightTestHarness
 
         /* include config.core.php */
         $properties = array();
-        include_once dirname(dirname(__FILE__)) . '/config.core.php';
+        include_once dirname(__FILE__, 2) . '/config.core.php';
         require_once MODX_CORE_PATH . 'config/' . MODX_CONFIG_KEY . '.inc.php';
         require_once MODX_CORE_PATH . 'model/modx/modx.class.php';
         include_once strtr(realpath(dirname(__FILE__)) . '/properties.inc.php', '\\', '/');
