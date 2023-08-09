@@ -36,25 +36,21 @@
       },
       {
         "key": "searchedRequestKey",
-        "type": "textfield",
         "area": "site",
         "value": "searched"
       },
       {
         "key": "searchtypeRequestKey",
-        "type": "textfield",
         "area": "site",
         "value": "searchtype"
       },
       {
         "key": "disabledTags",
-        "type": "textfield",
         "area": "site",
         "value": "head,form,select"
       },
       {
         "key": "highlightClasses",
-        "type": "textfield",
         "area": "site",
         "value": "highlight"
       },
@@ -66,31 +62,26 @@
       },
       {
         "key": "sectionsStart",
-        "type": "textfield",
         "area": "site",
         "value": "<!-- SearchHighlightStart -->"
       },
       {
         "key": "sectionsEnd",
-        "type": "textfield",
         "area": "site",
         "value": "<!-- SearchHighlightEnd -->"
       },
       {
         "key": "highlightTpl",
-        "type": "textfield",
         "area": "site",
         "value": "tplTermHighlight"
       },
       {
         "key": "searchTerms",
-        "type": "textfield",
         "area": "site",
         "value": "<!--search_terms-->"
       },
       {
         "key": "searchTermsTpl",
-        "type": "textfield",
         "area": "site",
         "value": "tplSearchTerms"
       }
