@@ -8,7 +8,7 @@
 $_lang['setting_searchhighlight.debug'] = 'Debug';
 $_lang['setting_searchhighlight.debug_desc'] = 'Log debug information in the MODX error log.';
 $_lang['setting_searchhighlight.disabledTags'] = 'Disabled Tags';
-$_lang['setting_searchhighlight.disabledTags_desc'] = '(Comma separated list) SearchHighlight does not replace text inside of this HTML tags.';
+$_lang['setting_searchhighlight.disabledTags_desc'] = 'Comma-separated list of HTML tags SearchHighlight does not replace text inside.';
 $_lang['setting_searchhighlight.highlightClasses'] = 'Search Highlight CSS Classnames';
 $_lang['setting_searchhighlight.highlightClasses_desc'] = 'CSS classnames that are assigned to the found text on the current page. If multiple classnames are set, the first classname is added to every here ';
 $_lang['setting_searchhighlight.highlightTpl'] = 'Highlight Template';
