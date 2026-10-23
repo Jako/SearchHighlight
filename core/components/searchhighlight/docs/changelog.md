@@ -34,7 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Added all available system settings
 
-## [2.0.0] - 2018-11-30
+## [2.0.0] - 2015-11-30
 
 ### Added
 

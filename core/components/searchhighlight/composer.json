@@ -1,6 +1,7 @@
 {
   "name": "treehillstudio/searchhighlight",
-  "description": "Use friendly URLs everywhere",
+  "description": "Highlight search terms on page linked from search results",
+  "version": "2.2.0",
   "authors": [
     {
       "name": "Thomas Jakobi",
